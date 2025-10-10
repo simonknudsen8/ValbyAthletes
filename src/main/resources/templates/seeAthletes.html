@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <title>Athletes</title>
+</head>
+<header>Here it will be a list of athletes</header>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Belt</th>
+        <th>Stance</th>
+        <th>Most use Technique</th>
+    </tr>
+    <tr th:each="a : ${athleteList}">
+        <td> <a th:href="@{/checkAthlete/{id}(id=${a.id})}" th:text="${a.name}">Name</a></td>
+        <td th:text="${a.age}">Age</td>
+        <td th:text="${a.belt}">Belt</td>
+        <td th:text="${a.stance}">Stance</td>
+        <td>Uchi-mata</td>
+    </tr>
+</table>
+</html>

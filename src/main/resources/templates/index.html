@@ -5,6 +5,23 @@
         <title>Valby Athletes</title>  
     </head>
 
-    <header>this is the main page, where you can choose to log in as a admin or a guest</header>
+    <h1>This is the Log in page</h1>
+
+    <form action="/logIn" method="get">
+
+        <div>
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="email" required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input name="password" id="password" type="password" required>
+        </div>
+
+        <button type="submit">Log in</button>
+    </form>
+
+    <div th:if="${WrongInput}">Wrong input</div>
 
 </html>
