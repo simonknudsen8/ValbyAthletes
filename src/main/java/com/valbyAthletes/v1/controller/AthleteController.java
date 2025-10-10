@@ -24,14 +24,7 @@ public class AthleteController {
     public AthleteController(AthleteService athleteService){
         this.athleteService = athleteService;
     }
-/* 
-    @GetMapping("/logIn")
-    public String getMethodName(Model model) {
-        List<Athlete> athletes = athleteService.getAllAthletes();
-        model.addAttribute("athleteList", athletes);
-        return "seeAthletes";
-    }
-*/
+
     @GetMapping("/checkAthlete/{id}")
     public String getMethodName(@PathVariable int id, Model model) {
         Athlete athlete = athleteService.getAthlete(id);

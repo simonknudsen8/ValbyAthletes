@@ -12,7 +12,7 @@ private LocalDate birthday;
 private int age;
 private String belt;
 private String stance;
-private ArrayList<Technique> favTechniques = new ArrayList<>(); 
+private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>(); 
 
 
     public Athlete(int id, String name, LocalDate birthday, String belt, String stance){
@@ -24,7 +24,6 @@ private ArrayList<Technique> favTechniques = new ArrayList<>();
         this.age = Period.between(birthday, LocalDate.now()).getYears();
     }
 
-
     //----------------------------------GETTER METHODS--------------------------------------------------
     public String getName(){
         return this.name;
@@ -34,12 +33,11 @@ private ArrayList<Technique> favTechniques = new ArrayList<>();
         return this.birthday;
     }
 
-
     public int getAge(){
         return this.age;
     }
 
-    public ArrayList<Technique> getFavTechniques(){
+    public ArrayList<TashiWazaTechinque> getFavTechniques(){
         return this.favTechniques;
     }
 
@@ -67,7 +65,7 @@ private ArrayList<Technique> favTechniques = new ArrayList<>();
         this.age = newAge;
     }
 
-    public void setFavTechniques(ArrayList<Technique> newTechinques){
+    public void setFavTechniques(ArrayList<TashiWazaTechinque> newTechinques){
         this.favTechniques = newTechinques;
     }
 

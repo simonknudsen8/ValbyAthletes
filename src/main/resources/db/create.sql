@@ -17,20 +17,27 @@ CREATE TABLE Athlete(
     AthleteStance VARCHAR(6) DEFAULT 'right'
 );
 
-CREATE TABLE Technique(
-    TechniqueID int PRIMARY KEY AUTO_INCREMENT UNIQUE,
-    TechniqueName VARCHAR(25) NOT NULL,
-    TechniqueType ENUM( 'Te-waza', 
+CREATE TABLE TashiWazaTechnique(
+    TashiWazaID int PRIMARY KEY AUTO_INCREMENT UNIQUE,
+    TashiWazaName VARCHAR(25) NOT NULL,
+    TashiWazaType ENUM( 'Te-waza', 
                         'Ashi-waza', 
                         'Koshi-waza', 
-                        'Mae-sutemi-waza', 
+                        'Ma-sutemi-waza', 
                         'Yoko-sutemi-waza') NOT NULL
 );
 
-CREATE TABLE UsesTechnique(
+
+CREATE TABLE UsesTashiWaza(
     AthleteID int,
-    TechniqueID int,
+    TashiWazaID int,
     AmountUses int DEFAULT 0,
     FOREIGN KEY (AthleteID) REFERENCES Athlete(AthleteID),
-    FOREIGN KEY (TechniqueID) REFERENCES Technique(TechniqueID)
+    FOREIGN KEY (TashiWazaID) REFERENCES TashiWazaTechnique(TashiWazaID)
+);
+
+
+CREATE TABLE NeWazaTechnique(
+    NeWazaID int PRIMARY KEY AUTO_INCREMENT UNIQUE,
+    NeWazaName VARCHAR(25) NOT NULL UNIQUE
 );

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head> 
+    <link rel="stylesheet" th:href="@{/Techniques.css}">
+    <title>Tashi-waza Techniques</title>
+</head>
+
+<div class="container">
+    <div class="item item-1">
+        <h4>Te-waza Techniques</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr th:each="t : ${techniques}" th:if="${t.type == 'Te-waza'}">
+                <td th:text="${t.name}">Name</td>
+            </tr>
+        </table>
+    </div>
+    <div class="item item-2">
+        <h4>Ashi-waza Techniques</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr th:each="t : ${techniques}" th:if="${t.type == 'Ashi-waza'}">
+                <td th:text="${t.name}">Name</td>
+            </tr>
+        </table>
+    </div>
+    <div class="item item-3">
+        <h4>Te-waza Techniques</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr th:each="t : ${techniques}" th:if="${t.type == 'Koshi-waza'}">
+                <td th:text="${t.name}">Name</td>
+            </tr>
+        </table>
+    </div>
+    <div class="item item-4">
+        <h4>Te-waza Techniques</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr th:each="t : ${techniques}" th:if="${t.type == 'Ma-sutemi-waza'}">
+                <td th:text="${t.name}">Name</td>
+            </tr>
+        </table>
+    </div>
+    <div class="item item-5">
+        <h4>Te-waza Techniques</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr th:each="t : ${techniques}" th:if="${t.type == 'Yoko-sutemi-waza'}">
+                <td th:text="${t.name}">Name</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</html>
