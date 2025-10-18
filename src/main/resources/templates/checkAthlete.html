@@ -1,9 +1,50 @@
 <DOCTYPE! HTML>
 <html lang="en" xmlns="http://www.thymeleaf.org">
 
+<head>
+    <title>athlete</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+
 
 <h1>specific information about the chosen athlete</h1>
+<div class="container">
+<div class="item item-1">
+    <h4>Name of the athlete:</h4>
+    <div th:text="${athlete.name}">Name not found</div>
+    <div th:text="${athlete.age}">age not found</div>
+    <div th:text="${athlete.birthday}">birthday not found</div>
+    <div th:text="${athlete.belt}">belt level not found</div>
+    <div th:text="${athlete.stance}">stance not found</div>
+</div>
 
-<div>Name of the athlete:</div>
-<div th:text="${athlete.name}">Name not found</div>
+<div class="item item-2">
+    <h4>Favorite techniques</h4>
+    <table>
+        <tr>
+            <th>Name of technique</th>
+        </tr>
+        <tr th:each="t : ${athlete.favTechniques}">
+            <td th:text="${t.name}">name</td>
+        </tr>
+    </table>
+</div>
+<div class="item item-3">
+    <form th:action="@{/editAthlete}">
+        <input type="hidden" th:value="${athlete.id}">
+        <button>edit information</button>
+    </form>
+</div>
+<div class="item item-4">
+
+<form th:action="@{/giveTechnique}" method="post">
+<label for="giveTechnique">Add a technique</label>
+<select name="giveTechnique" id="giveTechnique">
+<option th:each="t : ${techniques}" th:value="${t.id}" th:text="${t.name}">options</option>
+</select>
+<input type="hidden" id="id" name="id" th:value="${athlete.id}">
+<button type="submit">Add technique</button>
+</form>
+</div>
+</div>
 </html>

@@ -22,4 +22,8 @@ public class TechniqueService {
     public List<TashiWazaTechinque> getAllTechniques(){
         return techniqueRepository.getAllTechniques();
     }
+
+    
+
+    
 }

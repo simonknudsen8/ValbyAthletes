@@ -83,3 +83,12 @@ VALUES  -- Te waza
         ('Ko-uchi-makikomi','Yoko-sutemi-waza'),
         ('Kani-basami','Yoko-sutemi-waza'),
         ('Kawazu-gake','Yoko-sutemi-waza');
+
+
+INSERT INTO UsesTashiWaza(AthleteID, TashiWazaID)
+VALUES	-- Simons Techinques
+		(1, 25),
+        (1, 42),
+        (1, 4),
+        (1, 20),
+        (1, 5);

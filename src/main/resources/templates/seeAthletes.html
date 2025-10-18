@@ -14,7 +14,7 @@
         <th>Most use Technique</th>
     </tr>
     <tr th:each="a : ${athleteList}">
-        <td> <a th:href="@{/checkAthlete/{id}(id=${a.id})}" th:text="${a.name}">Name</a></td>
+        <td> <a th:href="@{/checkAthlete(id=${a.id})}" th:text="${a.name}">Name</a></td>
         <td th:text="${a.age}">Age</td>
         <td th:text="${a.belt}">Belt</td>
         <td th:text="${a.stance}">Stance</td>

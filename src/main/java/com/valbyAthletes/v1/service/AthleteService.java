@@ -29,5 +29,9 @@ public class AthleteService {
         return athleteRepository.getAllUsers();
         }
 
+        public void giveTechnique(int id, int tID){
+            athleteRepository.giveTechnique(id, tID);
+        }
+
 
 }

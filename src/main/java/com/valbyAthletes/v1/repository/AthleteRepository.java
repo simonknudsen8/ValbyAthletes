@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.valbyAthletes.v1.models.Athlete;
 import com.valbyAthletes.v1.repository.rowMapper.AthleteRowMapper;
+import com.valbyAthletes.v1.repository.rowMapper.TashiWazaRowMapper;
 
 
 @Repository
@@ -21,18 +22,39 @@ public class AthleteRepository {
 
     public Athlete getAthlete(int id){
 
-        String sql = "SELECT AthleteID, AthleteName, AthleteBirthday, AthleteBelt, AthleteStance FROM Athlete WHERE AthleteID = ?";
-        return jdbcTemplate.queryForObject(sql, new AthleteRowMapper(), id);
+        String sql = "SELECT * FROM Athlete WHERE AthleteID = ?";
+        Athlete athlete = jdbcTemplate.queryForObject(sql, new AthleteRowMapper(), id);
+
+        String sqlForUsedTechniques = "SELECT TashiWazaID, TashiWazaName, TashiWazaType FROM TashiWazaTechnique natural join UsesTashiWaza where athleteID = ?";
+
+        athlete.setFavTechniques(jdbcTemplate.query(sqlForUsedTechniques, new TashiWazaRowMapper(), id));
+
+        return athlete;
     }
 
 
     public List<Athlete> getAllUsers(){
        
-        String sql = "SELECT AthleteID, AthleteName, AthleteBirthday, AthleteBelt, AthleteStance FROM Athlete";
+        String sql = "SELECT * FROM Athlete";
 
         return jdbcTemplate.query(sql, new AthleteRowMapper());
 
 
+    }
+
+
+    public void giveTechnique(int id, int tID){
+
+        String sql = "INSERT INTO UsesTashiWaza(AthleteID, TashiWazaID) VALUES(?,?)";
+
+        jdbcTemplate.update(sql, id, tID);
+    }
+
+    public void removeTechnique(int id, int tID){
+
+        String sql = "DELETE FROM UsesTashiWaza WHERE AthleteID = ? AND TashiWazaID = ?";
+
+        jdbcTemplate.update(sql, id, tID);
     }
 
 

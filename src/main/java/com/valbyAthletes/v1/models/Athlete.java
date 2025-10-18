@@ -3,20 +3,20 @@ package com.valbyAthletes.v1.models;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Athlete{
+public class Athlete extends User{
 
-private int id;
 private String name;
 private LocalDate birthday;
 private int age;
 private String belt;
 private String stance;
-private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>(); 
+private List<TashiWazaTechinque> favTechniques = new ArrayList<>(); 
 
 
-    public Athlete(int id, String name, LocalDate birthday, String belt, String stance){
-        this.id = id;
+    public Athlete(int id, String userName, String email, String password, String name, LocalDate birthday, String belt, String stance){
+        super(id, userName, email, password);
         this.name = name;
         this.birthday = birthday;
         this.belt = belt;
@@ -24,7 +24,7 @@ private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>();
         this.age = Period.between(birthday, LocalDate.now()).getYears();
     }
 
-    //----------------------------------GETTER METHODS--------------------------------------------------
+//----------------------------------GETTER METHODS--------------------------------------------------
     public String getName(){
         return this.name;
     }
@@ -37,7 +37,7 @@ private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>();
         return this.age;
     }
 
-    public ArrayList<TashiWazaTechinque> getFavTechniques(){
+    public List<TashiWazaTechinque> getFavTechniques(){
         return this.favTechniques;
     }
 
@@ -49,9 +49,6 @@ private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>();
         return this.stance;
     }
 
-    public int getId(){
-        return this.id;
-    }
 // -------------------------------------SETTER METHODS------------------------------------
     public void setName(String newName){
         this.name = newName;
@@ -65,7 +62,7 @@ private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>();
         this.age = newAge;
     }
 
-    public void setFavTechniques(ArrayList<TashiWazaTechinque> newTechinques){
+    public void setFavTechniques(List<TashiWazaTechinque> newTechinques){
         this.favTechniques = newTechinques;
     }
 
@@ -77,8 +74,5 @@ private ArrayList<TashiWazaTechinque> favTechniques = new ArrayList<>();
         this.stance = newStance;
     }
 
-    public void setId(int newId){
-        this.id = newId;
-    }
 
 }

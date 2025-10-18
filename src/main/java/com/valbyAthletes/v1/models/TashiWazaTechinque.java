@@ -15,7 +15,7 @@ public class TashiWazaTechinque {
 
     //-----------------------------------GETTER METHODS---------------------------------------
 
-    public int getID(){
+    public int getId(){
         return this.id;
     }
 
@@ -30,7 +30,7 @@ public class TashiWazaTechinque {
 //--------------------------------------------SETTER METHODS---------------------------------------
 
 
-    public void setID(int newID){
+    public void setId(int newID){
         this.id = newID;
     }
 
