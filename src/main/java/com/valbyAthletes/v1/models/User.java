@@ -17,7 +17,7 @@ public class User{
 
 
 //-------------------------------------------GETTER METHODS---------------------------------------
-    public int getUserId(){
+    public int getId(){
         return this.id;
     }
 
@@ -35,7 +35,7 @@ public class User{
 
 //-----------------------------------Setter Methods-----------------------------------------------
 
-    public void setID(int newID){
+    public void setId(int newID){
         this.id = newID;
     }
 

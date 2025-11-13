@@ -3,11 +3,11 @@ USE ValbyAthletes;
 INSERT INTO User(UserName, Email, UserPassword)
 VALUES ('admin', 'admin@valbyjudoclub.com', '123');
 
-INSERT INTO Athlete(AthleteName, AthleteBirthday, AthleteStance, AthleteBelt)
-VALUES  ('Simon Knudsen', '2003-11-19', 'right', 'Blue'),
-        ('Sebastian Olsen', '2006-03-20', 'right', 'Blue'),
-        ('Charlie Debusscher', '1998-01-01', 'right', 'Brown'),
-        ('Morgan Aagaard', '2004-04-25', 'right', 'Black');
+INSERT INTO Athlete(AthleteUserName, AthleteEmail, AthletePassword, AthleteName, AthleteBirthday, AthleteStance, AthleteBelt, AthleteWeightCategory, AthleteStatus)
+VALUES  ('Simonknu', 'simon.knudsen@gmail.com', '123', 'Simon Knudsen', '2003-11-19', 'right', 'Blue', 73, 'Amateur'),
+        ('Sebastianols', 'sebastian.olsen@gmail.com', '123', 'Sebastian Olsen', '2006-03-20', 'right', 'Blue', 81, 'Amateur'),
+        ('Charliedeb', 'charlie.debusscher@gmail.com', '123','Charlie Debusscher', '1998-01-01', 'right', 'Brown', 90, 'Amateur'),
+        ('Morganaag', 'morgan.aagaard@gmail.com', '123', 'Morgan Aagaard', '2004-04-25', 'right', 'Black', 73, 'NationalTeam');
 
 INSERT INTO TashiWazaTechnique(TashiWazaName, TashiWazaType)
 VALUES  -- Te waza
@@ -83,8 +83,7 @@ VALUES  -- Te waza
         ('Ko-uchi-makikomi','Yoko-sutemi-waza'),
         ('Kani-basami','Yoko-sutemi-waza'),
         ('Kawazu-gake','Yoko-sutemi-waza');
-
-
+        
 INSERT INTO UsesTashiWaza(AthleteID, TashiWazaID)
 VALUES	-- Simons Techinques
 		(1, 25),
@@ -92,3 +91,7 @@ VALUES	-- Simons Techinques
         (1, 4),
         (1, 20),
         (1, 5);
+		
+		
+        
+        

@@ -23,8 +23,10 @@ public Athlete mapRow(ResultSet rs, int rowNum) throws SQLException{
     LocalDate birthday = rs.getDate("AthleteBirthday").toLocalDate();
     String belt = rs.getString("AthleteBelt");
     String stance = rs.getString("AthleteStance");
+    int weightCategory = rs.getInt("AthleteWeightCategory");
+    String status = rs.getString("AthleteStatus");
 
-    return new Athlete(id, userName, email, password ,name, birthday, belt, stance);
+    return new Athlete(id, userName, email, password ,name, birthday, belt, stance, weightCategory, status);
 }
     
 

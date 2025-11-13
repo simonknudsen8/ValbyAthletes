@@ -13,12 +13,12 @@ CREATE TABLE Athlete(
     AthleteID int PRIMARY KEY AUTO_INCREMENT UNIQUE,
     AthleteUserName VARCHAR(25) NOT NULL UNIQUE COLLATE utf8mb4_bin,
     AthleteEmail VARCHAR(50) NOT NULL UNIQUE,
-    AthleteUserPassword VARCHAR(25) NOT NULL COLLATE utf8mb4_bin,
+    AthletePassword VARCHAR(25) NOT NULL COLLATE utf8mb4_bin,
     AthleteName VARCHAR(25) NOT NULL,
     AthleteBirthday DATE,
     AthleteBelt VARCHAR(10) DEFAULT 'white',
     AthleteStance VARCHAR(6) DEFAULT 'right',
-    AthleteWightCategory int, 
+    AthleteWeightCategory int, 
     AthleteStatus ENUM ('NationalTeam', 'middle', 'Amateur') DEFAULT 'Amateur' NOT NULL
 );
 
